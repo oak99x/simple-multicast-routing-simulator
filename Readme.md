@@ -50,12 +50,12 @@ Se estiver usando Linux e quiser executar sem digitar python3:
 #### 1. Dar permissão de execução ao arquivo:
 No terminal, execute:
 
-chmod +x simulador.py
+`chmod +x simulador.py`
 
 #### 2. Copiar o arquivo para `/usr/local/bin/`:
 Copie o arquivo para o diretório `/usr/local/bin/`, que geralmente está no `PATH`, usando o seguinte comando:
 
-sudo cp simulador.py /usr/local/bin/simulador
+`sudo cp simulador.py /usr/local/bin/simulador`
 
 #### 3. Executar o simulador:
 Agora, você poderá executar o simulador diretamente como um comando:
