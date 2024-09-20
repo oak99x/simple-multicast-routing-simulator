@@ -8,8 +8,9 @@
 - **Mateus de Carvalho de Freitas**
 
 ---
+---
 
-### Formato do arquivo de descrição de topologia
+#### Formato do arquivo de descrição de topologia
 
 #### SUBNET
 
@@ -23,7 +24,8 @@
 
 `<mid>,<sid1>,<sid2>,...,<sidn>`
 
-### Formato de saída
+---
+#### Formato de saída
 
 #### Cabeçalho das tabelas de roteamento unicast: `#UROUTETABLE`
 
@@ -40,6 +42,8 @@
 **Mensagem mping:**  
 `<sid|rid> =>> <sid|rid>, ..., <sid|rid> =>> <sid|rid>: mping <mgroupid>;`
 
+---
+---
 
 ### Exexução partir de um terminal por linha de comando
 
