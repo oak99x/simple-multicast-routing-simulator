@@ -60,7 +60,7 @@ sudo cp simulador.py /usr/local/bin/simulador
 #### 3. Executar o simulador:
 Agora, você poderá executar o simulador diretamente como um comando:
 
-simulador topologia.txt s1 g1
+`simulador topologia.txt s1 g1`
 
 
 
