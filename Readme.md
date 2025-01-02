@@ -1,5 +1,3 @@
-## Redes de Computadores Avançadas - Prof. Tiago Coelho Ferreto
-
 # Simulador de roteamento multicast
 
 ### Integrantes do grupo:
