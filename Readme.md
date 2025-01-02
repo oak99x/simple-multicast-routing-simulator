@@ -1,68 +1,64 @@
-# Simulador de roteamento multicast
+# Multicast Routing Simulator  
 
-### Integrantes do grupo:
+#### Topology Description File Format  
 
-- **Jeniffer Aparecida Klein Bittencourt**
-- **Mateus de Carvalho de Freitas**
+#### SUBNET  
 
----
----
+`<sid>,<netaddr/mask>`  
 
-#### Formato do arquivo de descrição de topologia
+#### ROUTER  
 
-#### SUBNET
+`<rid>,<numifs>,<ip1/mask>,<weight1>,<ip2/mask>,<weight2>,<ip3/mask>,<weight3>...`  
 
-`<sid>,<netaddr/mask>`
+#### MGROUP  
 
-#### ROUTER
+`<mid>,<sid1>,<sid2>,...,<sidn>`  
 
-`<rid>,<numifs>,<ip1/mask>,<weight1>,<ip2/mask>,<weight2>,<ip3/mask>,<weight3>...`
+---  
 
-#### MGROUP
+#### Output Format  
 
-`<mid>,<sid1>,<sid2>,...,<sidn>`
+#### Unicast Routing Table Header: `#UROUTETABLE`  
 
----
-#### Formato de saída
+**Unicast Routing Entry:**  
+`<rid>, <netaddr/mask>,<nexthop>,<ifnum>`  
 
-#### Cabeçalho das tabelas de roteamento unicast: `#UROUTETABLE`
+#### Multicast Routing Table Header: `#MROUTETABLE`  
 
-**Entrada de roteamento unicast:**  
-`<rid>, <netaddr/mask>,<nexthop>,<ifnum>`
+**Multicast Routing Entry:**  
+`<rid>,<mid>,<nexthop1>,<ifnum1>,<nexthop2>,<ifnum2>,...,<nexthopn>,<ifnumn>`  
 
-#### Cabeçalho das tabelas de roteamento multicast: `#MROUTETABLE`
+#### Multicast Group Transmission Header: `#TRACE`  
 
-**Entrada de roteamento multicast:**  
-`<rid>,<mid>,<nexthop1>,<ifnum1>,<nexthop2>,<ifnum2>,...,<nexthopn>,<ifnumn>`
+**mping Message:**  
+`<sid|rid> =>> <sid|rid>, ..., <sid|rid> =>> <sid|rid>: mping <mgroupid>;`  
 
-#### Cabeçalho da transmissão para o grupo multicast: `#TRACE`
+---  
+---  
 
-**Mensagem mping:**  
-`<sid|rid> =>> <sid|rid>, ..., <sid|rid> =>> <sid|rid>: mping <mgroupid>;`
+### Command-Line Execution  
 
----
----
+Run the simulator from a terminal using:  
 
-### Exexução partir de um terminal por linha de comando
+`python3 simulador.py topologia.txt s1 g1`  
 
-`python3 simulador.py topologia.txt s1 g1`
+If you are using Linux and want to execute without typing `python3`:  
 
-Se estiver usando Linux e quiser executar sem digitar python3:
+#### 1. Grant execution permission to the file:  
+In the terminal, execute:  
 
-#### 1. Dar permissão de execução ao arquivo:
-No terminal, execute:
+`chmod +x simulador.py`  
 
-`chmod +x simulador.py`
+#### 2. Copy the file to `/usr/local/bin/`:  
+Copy the file to the `/usr/local/bin/` directory, which is usually in the `PATH`, using the following command:  
 
-#### 2. Copiar o arquivo para `/usr/local/bin/`:
-Copie o arquivo para o diretório `/usr/local/bin/`, que geralmente está no `PATH`, usando o seguinte comando:
+`sudo cp simulador.py /usr/local/bin/simulador`  
 
-`sudo cp simulador.py /usr/local/bin/simulador`
+#### 3. Run the simulator:  
+Now, you can execute the simulator directly as a command:  
 
-#### 3. Executar o simulador:
-Agora, você poderá executar o simulador diretamente como um comando:
+`simulador topologia.txt s1 g1`  
 
-`simulador topologia.txt s1 g1`
 
 
 
